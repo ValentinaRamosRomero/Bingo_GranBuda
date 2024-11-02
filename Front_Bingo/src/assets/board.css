@@ -1,0 +1,52 @@
+.App {
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.called-numbers {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.boards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.board {
+    border: 2px solid #333;
+    padding: 10px;
+    max-width: 200px;
+}
+
+.bingo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell.selected {
+    background-color: #4caf50;
+    color: white;
+}

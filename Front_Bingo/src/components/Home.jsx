@@ -6,7 +6,7 @@ export const Home = () => {
     <div>
       <h1>Bienvenido</h1>
       <Link to="/login">Iniciar Sesión</Link>
-      <Link to="/registro">Registrarse</Link>
+      <Link to="/register">Registrarse</Link>
    </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import 
 
-export const TarjetaUsuario = () => {
+export const CardUser = () => {
     //const [numerosGenerados, setNumerosGenerados] = useState(new Set());
     const [numeros, setNumeros] = useState([]);
 
