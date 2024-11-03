@@ -42,6 +42,7 @@ export const Board = () => {
 
     // Revisa si un jugador tiene bingo en su tablero
     useEffect(() => {
+        
         players.forEach(player => checkForBingo(player));
     }, [calledNumbers]);
 

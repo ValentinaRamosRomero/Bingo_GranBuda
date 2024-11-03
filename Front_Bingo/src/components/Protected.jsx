@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CardUser } from "./CardUser";
+
 import { Board } from "./Board";
 export const Protected = () => {
   const [message, setMessage] = useState("");
