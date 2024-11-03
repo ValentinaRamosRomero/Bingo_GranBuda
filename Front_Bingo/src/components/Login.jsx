@@ -14,23 +14,36 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const res = await axios.post(`http://localhost:3000/login`, formData);
-        localStorage.setItem('token', res.data.token);
-        navigate('/game');
+      const res = await axios.post(`http://localhost:3000/login`, formData);
+      localStorage.setItem("token", res.data.token);
+      navigate("/game");
     } catch (error) {
-        setMessage(error.response?.data?.message || 'Error al iniciar sesión');
+      setMessage(error.response?.data?.message || "Error al iniciar sesión");
     }
   };
 
   return (
     <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="email" name="email" placeholder="Correo" onChange={handleChange} />
-                <input type="password" name="password" placeholder="Contraseña" onChange={handleChange} />
-                <button type="submit">Iniciar sesión</button>
-            </form>
-            <p>{message}</p>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form_login">
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            onChange={handleChange}
+          />
         </div>
+
+        <button type="submit">Iniciar sesión</button>
+      </form>
+      <p>{message}</p>
+    </div>
   );
 };
