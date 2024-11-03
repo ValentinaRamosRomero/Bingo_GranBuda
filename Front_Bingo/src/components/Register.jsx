@@ -1,7 +1,9 @@
 import  { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const [message, setMessage] = useState('');
 
@@ -21,6 +23,7 @@ export const Register = () => {
 
   return (
     <div>
+      <button onClick={() => navigate(-1)}>Regresar</button>
       <h2>Registro</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="username" placeholder="Usuario" onChange={handleChange} />

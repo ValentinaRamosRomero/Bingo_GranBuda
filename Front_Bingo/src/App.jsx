@@ -3,6 +3,7 @@ import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { Protected } from "./components/Protected";
+import './App.css'
 
 function App() {
   const isAuthenticated = !!localStorage.getItem("token");

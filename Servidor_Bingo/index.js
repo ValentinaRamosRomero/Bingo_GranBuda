@@ -27,7 +27,7 @@ app.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 8);
 
-  const query = `INSERT INTO bingo (username, email, password) VALUES (?, ?, ?)`;
+  const query = `INSERT INTO users (username, email, password) VALUES (?, ?, ?)`;
   db.query(query, [username, email, hashedPassword], (err, result) => {
     if (err) {
       if (err.code === "ER_DUP_ENTRY") {
@@ -45,7 +45,7 @@ app.post("/register", async (req, res) => {
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
 
-  const query = `SELECT * FROM bingo WHERE email = ?`;
+  const query = `SELECT * FROM users WHERE email = ?`;
   db.query(query, [email], async (err, results) => {
     if (err) return res.status(500).json({ message: "Error en el servidor" });
 
